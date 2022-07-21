@@ -61,4 +61,14 @@ public class EmployeeController {
         return R.success(emp);
     }
 
+    @PostMapping(value = "/logout")
+    public R<String> logout(HttpServletRequest request) {
+        // remove user id in the session
+        request.getSession().removeAttribute("employee");
+        return R.success("logout successfully");
+    }
+
+
+
+
 }
